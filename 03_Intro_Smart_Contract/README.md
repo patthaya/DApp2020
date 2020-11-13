@@ -1,27 +1,26 @@
-# Simple Smart Contract
+# Smart Contract อย่างง่าย
 
-## Prerequisite
+## ซอฟต์แวร์ที่ต้องติดตั้งเบื้องต้น
 - NodeJS
 - truffle
-- ganache
 - Visual Studio Code (optional)
 
 ## Step 0
-Create a directory:
+สร้างไดเรกทอรี:
 
 ```mkdir 03_Intro_Smart_Contract```
 
-Change to work at the new directory:
+เปลี่ยนไปยังไดเร็กทอรีที่เพิ่งสร้าง:
 
 ```cd 03_Intro_Smart_Contract```
 
 ## Step 1
-Initialize the truffle framework with the following command:
+ให้ค่าเริ่มต้น (Initialization) โปรเจ็คโดยใช้คำสั่งต่อไปนี้ (ควรทำตอนที่ไดเร็กทอรียังว่างอยู่):
 
 ```truffle init```
 
 ## Step 2
-Use Visual Studio Code to create ```MyData.sol``` in ```contracts``` folder:
+ใช้ Visual Studio Code สร้างไฟล์ชื่อ ```MyData.sol``` ในไดเร็กทอรี ```contracts``` โดยไฟล์เป็นดังนี้:
 
 ```
 pragma solidity ^0.5.16;
@@ -40,7 +39,7 @@ contract MyData {
 ```
 
 ## Step 3
-Use Visual Studio Code to create ```2_deploy_contracts.js``` in ```migrations``` folder:
+ใช้ Visual Studio Code สร้างไฟล์ ```2_deploy_contracts.js``` ในไดเร็กทอรี ```migrations```:
 
 ```
 var MyData = artifacts.require("MyData");
@@ -51,29 +50,29 @@ module.exports = function(deployer) {
 ```
 
 ## Step 4: 
-At working directory (e.g. 03_Intro_Smart_Contract folder), enter the following command at the terminal to compile the project:
+เปิด terminal แล้วย้ายไปยังไดเร็กทอรีของโปรเจ็ค (เช่น 03_Intro_Smart_Contract), ทำการคอมไพล์โปรเจ็คโดยใช้คำสั่ง:
 ```
 truffle compile
 ```
 
-After successful compilation, go to development prompt by using the command as following:
+หากคอมไพล์สำเร็จ, ป้อนคำสั่งต่อไปนี้เพื่อใช้งานสภาพแวดล้อม develop ที่ truffle framework มีให้:
 ```
 truffle develop
 ```
 
-In the development prompt, we can migrate the smart contracts to the blockchain (provided by truffle) with this command:
+ในสภาพแวดล้อม develop ให้ใช้คำสั่งต่อไปนี้เพื่อย้าย smart contracts ไปยังบล็อกเชนที่ทาง truffle framework มีให้สำหรับการทดสอบ:
 ```
 migrate
 ```
 
-Use the following command to call ```get``` method from MyData smart contract:
+สามารถทดลองใช้เมธอด ```get``` ของ MyData smart contract ได้โดยใช้คำสั่งต่อไปนี้:
 ```
 MyData.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
 ```
 
-Notice the result and then call ```set``` method by using the following command:
+โปรดสังเกตผลลัพธ์ที่ได้ จากนั้นทดลองใช้เมธอด ```set``` โดยใช้คำสั่งต่อไปนี้:
 ```
 MyData.deployed().then(function(instance){return instance.set(2020);});
 ```
 
-Try to call the ```get``` method again and compare the result to the previous one.
+จากนั้นเรียกใช้เมธอด ```get``` อีกครั้ง แล้วสังเกตผลลัพธ์ที่ได้เมื่อเทียบกับผลลัพธ์การเรียก ```get``` ในครั้งแรก
