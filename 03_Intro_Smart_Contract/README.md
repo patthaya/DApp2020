@@ -66,12 +66,14 @@ In the development prompt, we can migrate the smart contracts to the blockchain 
 migrate
 ```
 
-
-
+Use the following command to call ```get``` method from MyData smart contract:
 ```
 MyData.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
 ```
 
+Notice the result and then call ```set``` method by using the following command:
 ```
 MyData.deployed().then(function(instance){return instance.set(2020);});
 ```
+
+Try to call the ```get``` method again and compare the result to the previous one.
