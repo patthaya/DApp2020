@@ -25,7 +25,7 @@
 
 6. เพิ่ม remote git ที่สร้างไว้ใน GitHub อย่าลืมเปลี่ยน fintechutcc/DApp.git เป็นค่าที่ถูกต้องตาม github 
 
-    `git remote add origin git@github.com:fintechutcc/DApp.git`
+    `git remote add origin https://github.com/fintechutcc/DApp.git`
 
 7. ทำการอัพโหลดข้อมูลทั้งหมดจาก main branch ซึ่งอยู่ในเครื่องไปยัง origin ที่อยู่บน github
 
