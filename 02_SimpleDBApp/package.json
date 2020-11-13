@@ -1,0 +1,19 @@
+{
+  "name": "simpledbapp",
+  "version": "0.0.1",
+  "description": "Simple DB App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NodeJS",
+    "MySQL"
+  ],
+  "author": "Suparerk Manitpornsut",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
